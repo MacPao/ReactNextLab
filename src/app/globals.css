@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+@layer base {
+  /* LIGHT THEME (Default Enterprise Azure / GitHub / Grafana Style) */
+  :root {
+    --bg-page: #f6f8fa;
+    --bg-surface: #ffffff;
+    --bg-subtle: #f3f4f6;
+    --bg-active: #e5e7eb;
+    
+    --border-main: #d0d7de;
+    --border-muted: #e6edf3;
+
+    --text-primary: #1f2328;
+    --text-secondary: #57606a;
+    --text-tertiary: #8c959f;
+
+    --brand-primary: #0969da;
+    --brand-primary-hover: #0256b4;
+    --brand-primary-light: #ddf4ff;
+
+    --status-success-bg: #dafbe1;
+    --status-success-text: #1a7f37;
+    --status-success-border: #4ac26b;
+
+    --status-warning-bg: #fff8c5;
+    --status-warning-text: #9a6700;
+    --status-warning-border: #d4a72c;
+
+    --status-danger-bg: #ffebe9;
+    --status-danger-text: #d1242f;
+    --status-danger-border: #ff8182;
+  }
+
+  /* DARK THEME (Enterprise Datadog / Grafana Dark Style) */
+  .dark {
+    --bg-page: #0d1117;
+    --bg-surface: #161b22;
+    --bg-subtle: #21262d;
+    --bg-active: #30363d;
+
+    --border-main: #30363d;
+    --border-muted: #21262d;
+
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --text-tertiary: #6e7681;
+
+    --brand-primary: #2f81f7;
+    --brand-primary-hover: #58a6ff;
+    --brand-primary-light: #102a45;
+
+    --status-success-bg: rgba(46, 160, 67, 0.15);
+    --status-success-text: #3fb950;
+    --status-success-border: rgba(46, 160, 67, 0.4);
+
+    --status-warning-bg: rgba(187, 128, 9, 0.15);
+    --status-warning-text: #d29922;
+    --status-warning-border: rgba(187, 128, 9, 0.4);
+
+    --status-danger-bg: rgba(248, 81, 73, 0.15);
+    --status-danger-text: #f85149;
+    --status-danger-border: rgba(248, 81, 73, 0.4);
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+}
+
+/* Enterprise Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-main);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Enterprise Clean Panel */
+.enterprise-panel {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-main);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.enterprise-input {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-main);
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.enterprise-input:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 2px var(--brand-primary-light);
+}
+
+/* Enterprise Action Buttons */
+.btn-enterprise-primary {
+  background-color: var(--brand-primary);
+  color: #ffffff;
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.btn-enterprise-primary:hover {
+  background-color: var(--brand-primary-hover);
+}
+
+.btn-enterprise-secondary {
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--border-main);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.btn-enterprise-secondary:hover {
+  background-color: var(--bg-active);
+}
+
+/* Enterprise Status Badges */
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-status-success {
+  background-color: var(--status-success-bg);
+  color: var(--status-success-text);
+  border: 1px solid var(--status-success-border);
+}
+
+.badge-status-warning {
+  background-color: var(--status-warning-bg);
+  color: var(--status-warning-text);
+  border: 1px solid var(--status-warning-border);
+}
+
+.badge-status-danger {
+  background-color: var(--status-danger-bg);
+  color: var(--status-danger-text);
+  border: 1px solid var(--status-danger-border);
+}
